@@ -1,0 +1,84 @@
+.homeHeader{
+  width: 100%;
+  overflow: hidden;
+  background-color: #f4f4f7;
+}
+.btn1 {
+  width: 308rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-left: 33rpx;
+  background-color: white;
+  color: black;
+  border-radius: 10rpx;
+  display: flex;
+  float: left;
+  border: 1px solid #eeeeee;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 28rpx; */
+  /* font-weight: bold; */
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 1rpx;
+  border: 0; 
+}
+.homeBody {
+  padding-top: 10px;
+  margin: 20rpx;
+}
+.homeBody_header {
+  padding: 20rpx 28rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background-color: #ffdd93;
+  color: #7d5a0d;
+}
+.homeBody_header>view {
+  float: right;
+}
+.homeBody_info {
+  border: 1px solid #ffdd93;
+  font-size: 16px;
+  padding: 26rpx;
+}
+.halfView{
+  width: 50%;
+  display: inline-block;
+  color: #999;
+}
+.halfView>view {
+  margin: 20rpx 0;
+}
+.halfView>view>view{
+  display: inline-block;
+  color: black;
+}
+.normalView {
+  color: #999;
+  padding: 0rpx 0 20rpx;
+}
+.normalView>view {
+  display: inline-block;
+  color: black;
+}
+.addressView {
+  width: 532rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  top: 4px;
+}
+.lastView {
+  padding-top: 20rpx;
+  border-top: 1px solid #eeeeee;
+}

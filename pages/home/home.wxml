@@ -1,0 +1,43 @@
+<!--pages/home/home.wxml-->
+<view class='homeHeader'>
+  <button class='btn1'>
+    <image class='btnImg' src='../../images/button/home_guize@2x.png'></image>
+    <view>平台规则</view>
+  </button>
+  <button class='btn1'>
+    <image class='btnImg' src='../../images/button/home_lianxi@2x.png'></image>
+    <view>联系我们</view>
+  </button>
+</view>
+<view>
+  <view class='homeBody'>
+    <view class='homeBody_header'>某产品安装<view>订单编号：12345612</view></view>
+    <view class='homeBody_info'>
+      <view class='halfView'>
+        <view>客户名称：<view>张三</view></view>
+        <view>产品平方量：<view>23平方</view></view>
+      </view>
+      <view class='halfView'>
+        <view>电话：<view>13512331234</view></view>
+        <view>佣金：<view>234元</view></view>
+      </view>
+      <view class='normalView'>地址：<view class='addressView'>按时大撒大撒抽空把就擦多久啊是简单快乐</view></view>
+      <view class='normalView lastView'>接单截止时间：<view>218-12-20 21：00</view></view>
+    </view>
+  </view>
+  <view class='homeBody'>
+    <view class='homeBody_header'>某产品安装<view>订单编号：12345612</view></view>
+    <view class='homeBody_info'>
+      <view class='halfView'>
+        <view>客户名称：<view>张三</view></view>
+        <view>产品平方量：<view>23平方</view></view>
+      </view>
+      <view class='halfView'>
+        <view>电话：<view>13512331234</view></view>
+        <view>佣金：<view>234元</view></view>
+      </view>
+      <view class='normalView'>地址：<view class='addressView'>按时大撒大撒抽空把就擦多久啊是简单快乐</view></view>
+      <view class='normalView lastView'>接单截止时间：<view>218-12-20 21：00</view></view>
+    </view>
+  </view>
+</view>

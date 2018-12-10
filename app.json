@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/index/index",
+    "pages/orderAll/orderAll",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/news/news"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e12946",
+    "navigationBarTitleText": "巧匠到家",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#f75d45",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "接单",
+        "iconPath": "/images/tabBar/bar_home.png",
+        "selectedIconPath": "/images/tabBar/bar_home_pre.png"
+      },
+      {
+        "pagePath": "pages/orderAll/orderAll",
+        "text": "订单",
+        "iconPath": "/images/tabBar/bar_dingdan.png",
+        "selectedIconPath": "/images/tabBar/bar_dingdan_pre.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "/images/tabBar/bar_geren.png",
+        "selectedIconPath": "/images/tabBar/bar_wode_pre.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "消息",
+        "iconPath": "/images/tabBar/bar_xiaoxi.png",
+        "selectedIconPath": "/images/tabBar/bar_xiaoxi_pre.png"
+      }
+    ]
+  }
+}
