@@ -1,1 +1,12 @@
 /* pages/orderAll/orderAll.wxss */
+.orderHeder {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.orderHeder>input {
+  background-color: #eee;
+  /* color: #bbb; */
+  border-radius: 40rpx;
+  padding: 10rpx 0rpx 10rpx 40rpx;
+}

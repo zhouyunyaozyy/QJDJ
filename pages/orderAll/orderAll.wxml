@@ -1,2 +1,10 @@
 <!--pages/orderAll/orderAll.wxml-->
-<text>pages/orderAll/orderAll.wxml</text>
+<view class='orderHeder'>
+  <input placeholder="客户名/地址/订单编号/手机号搜索" />
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>全部订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
