@@ -1,0 +1,63 @@
+/* pages/orderAll/orderList/orderList.wxss */
+.orderHeder {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.orderHeder>input {
+  background-color: #eee;
+  /* color: #bbb; */
+  border-radius: 40rpx;
+  padding: 10rpx 0rpx 10rpx 40rpx;
+}
+.homeBody {
+  padding-top: 10px;
+  margin: 20rpx;
+}
+.homeBody_header {
+  padding: 20rpx 28rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background-color: #ffdd93;
+  color: #7d5a0d;
+}
+.homeBody_header>view {
+  float: right;
+}
+.homeBody_info {
+  border: 1px solid #f1f1f1;
+  font-size: 16px;
+  padding: 26rpx;
+}
+.halfView{
+  width: 50%;
+  display: inline-block;
+  color: #999;
+}
+.halfView>view {
+  margin: 20rpx 0;
+}
+.halfView>view>view{
+  display: inline-block;
+  color: black;
+}
+.normalView {
+  color: #999;
+  padding: 0rpx 0 20rpx;
+}
+.normalView>view {
+  display: inline-block;
+  color: black;
+}
+.addressView {
+  width: 532rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  top: 4px;
+}
+.lastView {
+  padding-top: 20rpx;
+  border-top: 1px solid #eeeeee;
+}

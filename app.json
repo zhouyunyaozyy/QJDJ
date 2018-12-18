@@ -1,9 +1,11 @@
 {
   "pages":[
+    "pages/orderAll/orderDetail/orderDetail",
     "pages/orderAll/orderAll",
+    "pages/orderAll/orderList/orderList",
+    "pages/mine/mine",
     "pages/home/home",
     "pages/index/index",
-    "pages/mine/mine",
     "pages/logs/logs",
     "pages/news/news"
   ],

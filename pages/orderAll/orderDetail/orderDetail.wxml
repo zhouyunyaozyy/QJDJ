@@ -1,0 +1,34 @@
+<view class='homeBody' bindtap='goOrderDetail' id='123'>
+  <view class='homeBody_header'>某产品安装<view>订单编号：12345612</view></view>
+  <view class='homeBody_info'>
+    <view class='halfView'>
+      <view>客户名称：<view>张三</view></view>
+      <view>产品平方量：<view>23平方</view></view>
+    </view>
+    <view class='normalView'>地址：<view class='addressView'>按时大撒大撒抽空把就擦多久啊是简单快乐</view></view>
+    <view class='normalView lastView'>接单截止时间：<view>218-12-20 21：00</view></view>
+  </view>
+</view>
+<view class='info'>
+  <view class='info_header'>
+    <view class='info_icon'></view>
+    <view>商品信息</view>
+  </view>
+  <view class='info_body'>某商品平方量：<view class='info_content'>234平方</view></view>
+  <view class='info_body'>全部商品信息：<view class='info_content'>阿瑟东飒飒的</view></view>
+</view>
+<view class='info'>
+  <view class='info_header'>
+    <view class='info_icon'></view>
+    <view>客户信息</view>
+  </view>
+  <view class='info_body'>姓名：<view class='info_content'>张三</view></view>
+  <view class='info_body'>电话：<view class='info_content'>18872810012</view></view>
+  <view class='info_body'>地址：<view class='info_content'>18872810012</view></view>
+  <view class='info_body'>备注：<view class='info_content'>18872810012</view></view>
+</view>
+<view class='info_foot'>
+  <view>说明：</view>
+  <view>以上搜游费用指包括某产品每平方米安装费用及佣金，其他 辅料或额外安装费用，需师傅与客户自行协商</view>
+</view>
+<button class='payBtn'>立即接单并支付押金</button>

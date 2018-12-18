@@ -1,4 +1,4 @@
-// pages/orderAll/orderAll.js
+// pages/orderAll/orderDetail/orderDetail.js
 Page({
 
   /**
@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: "订单详情"//页面标题为路由参数
+    })
   },
 
   /**
@@ -62,11 +64,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goOrderList: function (event) {
-    console.log(1, event.target.id)
-    wx.navigateTo({
-      url: "/pages/orderAll/orderList/orderList?type=" + event.target.id
-    })
   }
 })

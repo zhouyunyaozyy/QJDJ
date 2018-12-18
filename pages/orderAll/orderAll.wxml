@@ -2,9 +2,51 @@
 <view class='orderHeder'>
   <input placeholder="客户名/地址/订单编号/手机号搜索" />
 </view>
-<view class='orderBody'>
+<view class='orderBody' bindtap="goOrderList" id="all">
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>全部订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>未预约订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>已预约订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>已开工订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>已完工订单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>未审核退单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>已审核退单</view>
+  <view class='orderName2'>></view>
+  <view class='orderName3'>12</view>
+</view>
+<view class='orderBody'>
+  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <view class='orderName'>日程安排</view>
   <view class='orderName2'>></view>
   <view class='orderName3'>12</view>
 </view>
