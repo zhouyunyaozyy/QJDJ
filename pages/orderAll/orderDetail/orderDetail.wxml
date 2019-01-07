@@ -31,4 +31,4 @@
   <view>说明：</view>
   <view>以上搜游费用指包括某产品每平方米安装费用及佣金，其他 辅料或额外安装费用，需师傅与客户自行协商</view>
 </view>
-<button class='payBtn'>立即接单并支付押金</button>
+<button class='payBtn' bindtap='receiveOrder'>立即接单并支付押金</button>

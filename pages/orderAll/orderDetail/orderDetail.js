@@ -63,6 +63,29 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    [
+      {type: button, data: {prop}}
+    ]
 
+
+
+  },
+
+  receiveOrder: function () {
+    wx.showModal({
+      title: '温馨提示',
+      confirmText: '接单',
+      cancelText: '考虑考虑',
+      cancelColor: '#e12a46',
+
+      content: '＊ 接单后请在2小时内完成预约，请务必按照服务规则操作。',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
 })

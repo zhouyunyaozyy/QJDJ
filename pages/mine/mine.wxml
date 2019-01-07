@@ -1,8 +1,8 @@
 <!--pages/orderAll/orderAll.wxml-->
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
-  <view class='orderName'>个人信息</view>
-  <view class='orderName2'>></view>
+  <view class='orderName' bindtap='goPerson'>个人信息</view>
+  <view class='orderName2' bindtap='goPerson'>></view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>

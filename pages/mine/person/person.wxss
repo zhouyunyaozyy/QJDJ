@@ -1,0 +1,33 @@
+/* pages/mine/person/person.wxss */
+
+.personView {
+  margin: 0 24rpx;
+  padding: 36rpx 0;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+.personLeft {
+  float: left;
+}
+.personRight{
+  float: right;
+  color: #999999;
+}
+.personRight>input{
+  text-align: right;
+}
+.personView1 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 6px solid #f6f6f6;
+}
+.personView1>image{
+  width: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+}
+button{
+  margin-top: 40rpx;
+  background-color: #ea4752;
+  color: white;
+}
