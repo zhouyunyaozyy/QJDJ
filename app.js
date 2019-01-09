@@ -10,6 +10,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        this.get({
+          url: "/mp-user/login",
+          data: {code: res.code},
+          successs: (data) => {
+            console.log(data)
+          }
+        })
       }
     })
     // 获取用户信息
@@ -38,7 +45,7 @@ App({
   },
 
   config: {
-    host: 'http://xcx.mysprout.cn',           // 本地 
+    host: 'http://118.24.119.203',           // 本地 
   },
 
   get: function (url, data, successs, error) {
@@ -85,7 +92,7 @@ App({
     token && (data.token = token);
 
     // data.token = 'will';
-    !data.source && (data.source = 'client');
+    // !data.source && (data.source = 'client');
     let _this = this;
     wx.request({
       url: `${this.config.host}/${url}`,
