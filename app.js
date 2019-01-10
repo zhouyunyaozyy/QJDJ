@@ -10,13 +10,12 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        this.get({
-          url: "/mp-user/login",
-          data: {code: res.code},
-          successs: (data) => {
-            console.log(data)
+        this.get("/mp-user/login", {code: res.code},
+          (data) => {
+            // console.log(data)
+            wx.setStorageSync('Authorization', data)
           }
-        })
+        )
       }
     })
     // 获取用户信息
@@ -54,7 +53,7 @@ App({
       data,
       method: 'GET',
       success: (data) => {
-        success && success(data);
+        successs && successs(data);
       },
       error: (e) => {
         error && error(data);
@@ -94,9 +93,14 @@ App({
     // data.token = 'will';
     // !data.source && (data.source = 'client');
     let _this = this;
+    console.log(url, data, json)
+    console.log(`${this.config.host}/${url}`)
     wx.request({
       url: `${this.config.host}/${url}`,
       data: data,
+      header: {
+        "Authorization": wx.getStorageSync('Authorization') || ""
+      },
       method: method,
       success: function (res) {
         // 有token就保存token

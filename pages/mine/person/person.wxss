@@ -25,9 +25,13 @@
   width: 80rpx;
   height: 80rpx;
   display: inline-block;
+  margin-top: 6rpx;
+  border-radius: 4px;
 }
 button{
   margin-top: 40rpx;
   background-color: #ea4752;
   color: white;
 }
+
+@import '../../../componets/model/model.wxss'
