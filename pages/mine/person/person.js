@@ -22,14 +22,21 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     })
+    // console.log(app)
+    app.get("/mp-user", {}, (data) => {
+      console.log(data)
+    })
   },
-
+  goPhone: () => {
+    wx.navigateTo({
+      url: '/pages/mine/person/phone/phone',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (e) {
     var that = this;
-    console.log(that)
     //请求数据
     model.updateAreaData(that, 0, e);
   },

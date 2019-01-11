@@ -10,6 +10,10 @@
   <view class='personLeft'><text>姓名</text></view>
   <view class='personRight'><input value='12312312345' placeholder='请输入姓名'/></view>
 </view>
+<view class='personView' bindtap='goPhone'>
+  <view class='personLeft'><text>手机号绑定</text></view>
+  <view class='personRight'>></view>
+</view>
 <view class='personView' bindtap="translate">
   <view class='personLeft'><text>所在区域</text></view>
   <view class='personRight'><text>{{county}}</text>></view>

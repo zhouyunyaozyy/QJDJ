@@ -5,7 +5,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -93,17 +92,19 @@ App({
     // data.token = 'will';
     // !data.source && (data.source = 'client');
     let _this = this;
-    console.log(url, data, json)
-    console.log(`${this.config.host}/${url}`)
     wx.request({
       url: `${this.config.host}/${url}`,
       data: data,
       header: {
-        "Authorization": wx.getStorageSync('Authorization') || ""
+        "Authorization": wx.getStorageSync('Authorization') ? ("Bearer " + wx.getStorageSync('Authorization')) : ""
       },
       method: method,
       success: function (res) {
         // 有token就保存token
+        console.log(1, res)
+        if (res.statusCode === 200) {
+          
+        }
         let { token, category_logo_url, code } = res.data;
         // if (code == 1001) { // 没有登录
         //   wx.switchTab({

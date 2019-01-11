@@ -1,0 +1,30 @@
+/* pages/mine/person/phone/phone.wxss */
+.phoneView1{
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.phoneView1>view{
+  float: left;
+}
+.phoneView1 input{
+  /* width: 100%;
+  display: block; */
+  padding-left: 100rpx;
+  /* padding-right: 100rpx; */
+  box-sizing: border-box;
+  /* text-indent: 100rpx; */
+}
+.right150{
+  width: 150rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 0;
+}
+.right150>image{
+  width: 150rpx;
+  height: 100rpx;
+}
