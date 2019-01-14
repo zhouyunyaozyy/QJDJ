@@ -4,11 +4,11 @@
   <view class='orderName' bindtap='goPerson'>个人信息</view>
   <view class='orderName2' bindtap='goPerson'>></view>
 </view>
-<view class='orderBody'>
+<!-- <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>我的账户</view>
   <view class='orderName2'>></view>
-</view>
+</view> -->
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>安装类型</view>

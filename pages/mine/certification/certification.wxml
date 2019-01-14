@@ -1,0 +1,38 @@
+<!--pages/mine/certification/certification.wxml-->
+<view class='cer'>
+  <text>请上传证件照片，填写真实信息进行审核，审核通过才能完成认证。</text>
+  <view class='cerView'>
+    <text>真实姓名:</text>
+    <input placeholder='请填写真实姓名'></input>
+  </view>
+  <view class='cerView'>
+    <text>身份证号:</text>
+    <input placeholder='请填写身份证号'></input>
+  </view>
+  <text class='information'>身份证正反面照片和本人持有身份证照片</text>
+  <view class='imgAll'>
+    <view class='imgView'>
+      <text>本人持证件</text>
+      <view wx:if="{{productInfo[0].name}}" class='imgUrlView'>
+        <image src='{{productInfo[0].url}}'></image>
+      </view>
+      <view class='uploadBtn' data-type="0" bindtap='bindChooiceProduct' wx:else>+</view>
+      <view class='removebtn'>删除</view>
+    </view>
+    <view class='imgView'>
+      <text>正面</text>
+      <view class='uploadBtn' data-type="1">+</view>
+      <view>
+        <image src='http://tmp/wx3caad5c587412f95.o6zAJs0p_iIkM2-psgMAln2xVJlo.HrPT7xCCxrrh23f9ccfdfc88a2660906d50eb6d5a331.jpg'></image>
+      </view>
+      <view class='removebtn'>删除</view>
+    </view>
+    <view class='imgView'>
+      <text>背面</text>
+      <view class='uploadBtn' data-type="2">+</view>
+      <view></view>
+      <view class='removebtn'>删除</view>
+    </view>
+  </view>
+</view>
+

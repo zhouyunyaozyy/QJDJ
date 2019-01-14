@@ -28,3 +28,8 @@
   width: 150rpx;
   height: 100rpx;
 }
+.saveBtn {
+  margin-top: 10rpx;
+  background-color: #ea4752;
+  color: white;
+}

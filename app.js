@@ -75,6 +75,21 @@ App({
     })
   },
 
+
+  put: function (url, data, successs, error) {
+    this.request({
+      url,
+      data,
+      method: 'PUT',
+      success: (res) => {
+        successs && successs(res);
+
+      },
+      error: (e) => {
+        error && error(e);
+      }
+    })
+  },
   /**
    * 请求数据
    * json.url       接口地址
@@ -86,6 +101,7 @@ App({
   request: function (json) {
     wx.showLoading();
     let { url, data, method, success, error } = json;
+    // console.log(2, data)
     let token = wx.getStorageSync('token');
     token && (data.token = token);
 
@@ -93,7 +109,7 @@ App({
     // !data.source && (data.source = 'client');
     let _this = this;
     wx.request({
-      url: `${this.config.host}/${url}`,
+      url: `${this.config.host}${url}`,
       data: data,
       header: {
         "Authorization": wx.getStorageSync('Authorization') ? ("Bearer " + wx.getStorageSync('Authorization')) : ""
@@ -101,18 +117,24 @@ App({
       method: method,
       success: function (res) {
         // 有token就保存token
-        console.log(1, res)
+        // console.log(1, res)
         if (res.statusCode === 200) {
-          
+          // token && _this.setStorageSync({ token });
+          success && success(res.data);
+        } else {
+          wx.showToast({
+            title: res.data,
+            icon: 'none',
+            duration: 2000
+          })
         }
-        let { token, category_logo_url, code } = res.data;
+        // let { token, category_logo_url, code } = res.data;
         // if (code == 1001) { // 没有登录
         //   wx.switchTab({
         //     url: '/pages/mine/mine',
         //   })
         // }
-        token && _this.setStorageSync({ token });
-        success && success(res.data);
+        
       },
       // 失败
       fail: function (e) {

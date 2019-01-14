@@ -1,0 +1,59 @@
+/* pages/mine/certification/certification.wxss */
+.cer {
+  margin: 15rpx;
+}
+.cer>text {
+  font-size: 14px;
+  color: #999999;
+}
+.cerView {
+  width: 100%;
+  overflow: hidden;
+  margin: 15rpx 0;
+}
+.cerView>text {
+  float: left;
+  color: #bbb;
+}
+.cerView>input {
+  float: left;
+  padding-left: 40rpx;
+}
+.information {
+  margin: 15rpx 0;
+  display: inline-block;
+}
+.imgAll {
+  width: 100%;
+  overflow: hidden;
+}
+.imgView{
+  width: 240rpx;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+}
+.uploadBtn {
+  width: 198rpx;
+  height: 198rpx;
+  font-size: 148rpx;
+  text-align: center;
+  border: 1px dashed #999999;
+  line-height: 170rpx;
+  color: #999999;
+  margin: 10rpx auto;
+}
+.removebtn {
+  color: red;
+  font-size: 30rpx;
+}
+.imgUrlView {
+  width: 198rpx;
+  height: 198rpx;
+  margin: 10rpx auto;
+}
+.imgUrlView>image {
+  width: 198rpx;
+  height: 198rpx;
+  display: inline-block;
+}

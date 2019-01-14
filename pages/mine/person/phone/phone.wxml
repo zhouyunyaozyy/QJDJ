@@ -1,15 +1,17 @@
 <!--pages/mine/person/phone/phone.wxml-->
 <view class='phoneView1'>
   <view>手机号</view>
-  <view><input placeholder='请输入手机号' value='{{phone}}'></input></view>
+  <view><input placeholder='请输入手机号' value='{{phone}}' bindinput='inputBlur' data-key="phone"></input></view>
 </view>
 <view class='phoneView1'>
   <view>图形码</view>
-  <view><input placeholder='请输入图形码' maxlength='4' value='{{secCode}}'></input></view>
+  <view><input placeholder='请输入图形码' maxlength='4' value='{{secCode}}' bindinput='inputBlur' data-key="secCode"></input></view>
   <view class='right150'><image src='{{image}}' bindtap='getImage'></image></view>
 </view>
 <view class='phoneView1'>
   <view>验证码</view>
-  <view><input placeholder='请输入验证码' maxlength='4'></input></view>
-  <button class='right150' bindtap='getNum'>获取</button>
+  <view><input placeholder='请输入验证码' maxlength='4' bindinput='inputBlur' data-key="smsCode" value='{{smsCode}}'></input></view>
+  <button class='right150' bindtap='getNum' disabled="{{btnDisabled}}">{{btnVal}}</button>
 </view>
+
+<button bindtap='save' class='saveBtn'>保存</button>

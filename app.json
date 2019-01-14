@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/mine/person/phone/phone",
-    "pages/mine/person/person",
+    "pages/mine/certification/certification",
+    "pages/mine/mine",
     "pages/index/index",
+    "pages/mine/person/person",
+    "pages/mine/person/phone/phone",
     "pages/orderAll/orderDetail/orderDetail",
     "pages/orderAll/orderAll",
     "pages/orderAll/orderList/orderList",
-    "pages/mine/mine",
     "pages/home/home",
     "pages/logs/logs",
     "pages/news/news"

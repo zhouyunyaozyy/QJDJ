@@ -11,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    form: {}
   },
 
   /**
@@ -23,15 +24,28 @@ Page({
       userInfo: app.globalData.userInfo
     })
     // console.log(app)
-    app.get("/mp-user", {}, (data) => {
-      console.log(data)
-    })
   },
   goPhone: () => {
     wx.navigateTo({
       url: '/pages/mine/person/phone/phone',
     })
   },
+  inputBlur: function (e) {
+    let dataset = e.currentTarget.dataset
+    this.setData({
+      ["form." + dataset.key]: e.detail.value
+    })
+  },
+  save: function () {
+    app.put("/mp-user", this.data.form, (data) => {
+      wx.showToast({
+        title: data,
+        icon: "successful",
+        duration: 2000
+      })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -42,10 +56,10 @@ Page({
   },
   //点击选择城市按钮显示picker-view
   translate: function (e) {
-    this.setData({
-      "item.value": [2,1,1]
-    })
-    console.log(this, this.data.item)
+    // this.setData({
+    //   "item.value": [3,1,1]
+    // })
+    // console.log(this, this.data.item)
     model.animationEvents(this, 0, true, 400);
   },
   //隐藏picker-view
@@ -61,22 +75,29 @@ Page({
   bindChange: function (e) {
     model.updateAreaData(this, 1, e);
     //如果想滑动的时候不实时更新，只点确定的时候更新，注释掉下面这行代码即可。
-    this.updateShowData()
+    // this.updateShowData()
   },
   //更新顶部展示的数据
   updateShowData: function (e) {
     item = this.data.item;
+    console.log("item", item)
     this.setData({
       province: item.provinces[item.value[0]].name,
       city: item.citys[item.value[1]].name,
-      county: item.countys[item.value[2]].name
+      county: item.countys[item.value[2]].name,
+      "form.address": item.provinces[item.value[0]].name + item.citys[item.value[1]].name + item.countys[item.value[2]].name
     });
+    console.log(this.data)
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.get("/mp-user", {}, (data) => {
+      this.setData({
+        form: data
+      })
+    })
   },
 
   /**
