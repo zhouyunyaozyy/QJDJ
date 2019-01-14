@@ -7,8 +7,40 @@ Page({
    * 页面的初始数据
    */
   data: {
+    realName: '',
+    cardId: "",
     authPictures: '',
     productInfo: [{ url: "", name: '' }, { url: "", name: '' }, { url: "", name: '' }]
+  },
+  save: function () {
+    let arr = []
+    for (let val of this.data.productInfo) {
+      if (val.url === "") {
+        wx.showToast({
+          title: '请认真上传照片',
+          icon: 'none',
+          duration: 2000
+        })
+        return
+      } else {
+        arr.push(val.name)
+      }
+    }
+    app.post("/mp-user-auth", { authPictures: arr.join(','), cardId: this.data.cardId, realName: this.data.realName}, (res) => {
+      wx.showToast({
+        title: res,
+        icon: 'successful',
+        duration: 2000
+      })
+      wx.navigateBack({
+        delta: 1
+      })
+    })
+  },
+  inputBlur: function (e) {
+    this.setData({
+      [e.currentTarget.dataset.key]: e.detail.value
+    })
   },
   bindChooiceProduct: function (event) {
     var that = this
@@ -55,12 +87,15 @@ Page({
               //   "fileName": data.FileName,
               //   "url": data.Url
               // });
-              // that.setData({
-              //   productInfo: productInfo
-              // });
-              productInfo[parseInt(event.currentTarget.dataset.type)].url = tempFilePaths[i]
-              productInfo[parseInt(event.currentTarget.dataset.type)].name = res.data
-              console.log(that.data)
+              that.setData({
+                ["productInfo[" + parseInt(event.currentTarget.dataset.type) + "]"]:{
+                  url: tempFilePaths[i],
+                  name: res.data
+                } 
+              });
+              // productInfo[parseInt(event.currentTarget.dataset.type)].url = tempFilePaths[i]
+              // productInfo[parseInt(event.currentTarget.dataset.type)].name = res.data
+              console.log(that)
               //如果是最后一张,则隐藏等待中  
               if (uploadImgCount == tempFiles.length) {
                 wx.hideToast();
@@ -81,6 +116,27 @@ Page({
         }
       }
     });  
+  },
+  showImg: function (e) {
+    console.log(e)
+    let arr = []
+    for (let val of this.data.productInfo) {
+      if (val.url) {
+        arr.push(val.url)
+      }
+    }
+    wx.previewImage({
+      current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+      urls: arr // 需要预览的图片http链接列表
+    })
+  },
+  removeImg: function (event) {
+    this.setData({
+      ["productInfo[" + parseInt(event.currentTarget.dataset.type) + "]"]: {
+        url: "",
+        name: ""
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
