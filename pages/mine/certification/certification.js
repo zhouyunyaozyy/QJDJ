@@ -10,6 +10,8 @@ Page({
     realName: '',
     cardId: "",
     authPictures: '',
+    realAuthFlag: 0,
+    realAuthFlagVal: "",
     productInfo: [{ url: "", name: '' }, { url: "", name: '' }, { url: "", name: '' }]
   },
   save: function () {
@@ -142,7 +144,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.get("/mp-user-auth", {}, (res) => {
+      this.setData({
+        userAuthId: res.userAuthId,
+        realName: res.realName,
+        cardId: res.cardId,
+        authPictures: res.authPictures,
+        realAuthFlag: res.realAuthFlag,
+        realAuthFlagVal: res.realAuthFlagVal,
+        failReason: res.failReason
+      })
+    })
   },
 
   /**

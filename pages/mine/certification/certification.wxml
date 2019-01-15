@@ -37,5 +37,6 @@
     </view>
   </view>
 </view>
-
-<button bindtap='save'>提交</button>
+<text class='status'>认证状态：<text wx:if="{{realAuthFlag == 0}}" class='status0'>{{realAuthFlagVal}}</text><text wx:elif="{{realAuthFlag == 1}}" class='status1'>{{realAuthFlagVal}}</text><text wx:if="{{realAuthFlag == 2}}" class='status2'>{{realAuthFlagVal}}</text><text wx:if="{{realAuthFlag == 3}}" class='status3'>{{realAuthFlagVal}}</text></text>
+<text wx:if="{{realAuthFlag == 3}}" class='status'>失败原因：{{failReason}}</text>
+<button bindtap='save' class='saveBtn'>提交</button>

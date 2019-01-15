@@ -57,3 +57,17 @@
   height: 198rpx;
   display: inline-block;
 }
+.status {
+  font-size: 26rpx;
+  margin-bottom: 15rpx;
+}
+.status3 {
+  color: red;
+}
+.status2 {
+  color: green;
+}
+.saveBtn {
+  background-color: #ea4752;
+  color: white;
+}
