@@ -60,6 +60,8 @@
 .status {
   font-size: 26rpx;
   margin-bottom: 15rpx;
+  width: 100%;
+  display: inline-block;
 }
 .status3 {
   color: red;

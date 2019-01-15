@@ -43,7 +43,8 @@ App({
   },
 
   config: {
-    host: 'http://118.24.119.203',           // 本地 
+    // host: 'http://118.24.119.203',           // 本地 
+    host: 'http://xcx.mysprout.cn', 
   },
 
   get: function (url, data, successs, error) {

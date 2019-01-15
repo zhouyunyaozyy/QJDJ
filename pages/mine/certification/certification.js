@@ -28,16 +28,30 @@ Page({
         arr.push(val.name)
       }
     }
-    app.post("/mp-user-auth", { authPictures: arr.join(','), cardId: this.data.cardId, realName: this.data.realName}, (res) => {
-      wx.showToast({
-        title: res,
-        icon: 'successful',
-        duration: 2000
+    if (this.data.userAuthId) {
+      app.put("/mp-user-auth", { authPictures: arr.join(','), cardId: this.data.cardId, realName: this.data.realName, userAuthId: this.data.userAuthId }, (res) => {
+        wx.showToast({
+          title: res,
+          icon: 'successful',
+          duration: 2000
+        })
+        wx.navigateBack({
+          delta: 1
+        })
       })
-      wx.navigateBack({
-        delta: 1
+    } else {
+      app.post("/mp-user-auth", { authPictures: arr.join(','), cardId: this.data.cardId, realName: this.data.realName }, (res) => {
+        wx.showToast({
+          title: res,
+          icon: 'successful',
+          duration: 2000
+        })
+        wx.navigateBack({
+          delta: 1
+        })
       })
-    })
+    }
+    
   },
   inputBlur: function (e) {
     this.setData({
@@ -140,21 +154,32 @@ Page({
       }
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getperson: function () {
     app.get("/mp-user-auth", {}, (res) => {
       this.setData({
         userAuthId: res.userAuthId,
         realName: res.realName,
         cardId: res.cardId,
-        authPictures: res.authPictures,
         realAuthFlag: res.realAuthFlag,
         realAuthFlagVal: res.realAuthFlagVal,
         failReason: res.failReason
       })
+      if (res.realAuthFlag == 0) {
+
+      } else {
+        this.setData({
+          productInfo: [
+            { url: res.authPicturesArr[0], name: res.authPicturesArr[0] }, { url: res.authPicturesArr[1], name: res.authPicturesArr[1] }, { url: res.authPicturesArr[2], name: res.authPicturesArr[2] }
+          ]
+        })
+      }
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getperson()
   },
 
   /**
