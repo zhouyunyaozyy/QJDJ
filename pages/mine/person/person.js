@@ -98,7 +98,7 @@ Page({
       province: item.provinces[item.value[0]].name,
       city: item.citys[item.value[1]].name,
       county: item.countys[item.value[2]].name,
-      "form.address": item.citys[item.value[1]].code
+      "form.address": item.countys[item.value[2]].code
     });
     console.log(this.data)
   },
