@@ -1,9 +1,9 @@
 {
-  "pages":[
-    "pages/mine/certification/certification",
+  "pages": [
     "pages/mine/mine",
-    "pages/index/index",
     "pages/mine/person/person",
+    "pages/mine/certification/certification",
+    "pages/index/index",
     "pages/mine/person/phone/phone",
     "pages/orderAll/orderDetail/orderDetail",
     "pages/orderAll/orderAll",
@@ -12,11 +12,11 @@
     "pages/logs/logs",
     "pages/news/news"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e12946",
     "navigationBarTitleText": "巧匠到家",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#333",

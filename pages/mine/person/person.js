@@ -37,11 +37,24 @@ Page({
     })
   },
   save: function () {
+    console.log("qwer", this.data.province)
+    if (!this.data.province) {
+      // let _form = JSON.parse(JSON.stringify(this.data.form))
+      // delete _form.address
+      // this.setData({
+      //   form: _form
+      // })
+      delete this.data.form.address
+      console.log(this.data)
+    }
     app.put("/mp-user", this.data.form, (data) => {
       wx.showToast({
         title: data,
         icon: "successful",
         duration: 2000
+      })
+      wx.navigateBack({
+        delta: 1
       })
     })
   },
@@ -85,7 +98,7 @@ Page({
       province: item.provinces[item.value[0]].name,
       city: item.citys[item.value[1]].name,
       county: item.countys[item.value[2]].name,
-      "form.address": item.provinces[item.value[0]].name + item.citys[item.value[1]].name + item.countys[item.value[2]].name
+      "form.address": item.citys[item.value[1]].code
     });
     console.log(this.data)
   },

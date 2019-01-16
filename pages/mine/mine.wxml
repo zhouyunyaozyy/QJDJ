@@ -9,17 +9,17 @@
   <view class='orderName'>我的账户</view>
   <view class='orderName2'>></view>
 </view> -->
-<view class='orderBody'>
+<view class='orderBody' bindtap='showPickerProduct'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>安装类型</view>
   <view class='orderName2'>></view>
 </view>
-<view class='orderBody'>
+<view class='orderBody' bindtap='showPickerArea'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>可安装区域</view>
   <view class='orderName2'>></view>
 </view>
-<view class='orderBody'>
+<view class='orderBody' bindtap='goShiming'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>实名认证</view>
   <view class='orderName2'>></view>
@@ -39,3 +39,17 @@
   <view class='orderName'>意见反馈</view>
   <view class='orderName2'>></view>
 </view>
+<right-picker
+  id="showPickerArea"
+	bind:chooseEvent='choose'
+	chooseList='{{ areaList }}'
+  firstList="{{areas}}"
+	multiple='{{ multiple }}'
+></right-picker>
+<right-picker
+  id="showPickerProduct"
+	bind:chooseEvent='chooseProduct'
+	chooseList='{{ productList }}'
+  firstList="{{products}}"
+	multiple='{{ multiple }}'
+></right-picker>

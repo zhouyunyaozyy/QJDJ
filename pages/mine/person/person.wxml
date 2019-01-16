@@ -16,7 +16,7 @@
 </view>
 <view class='personView' bindtap="translate">
   <view class='personLeft'><text>所在区域</text></view>
-  <view class='personRight'><text>{{form.address}}</text>></view>
+  <view class='personRight'><text wx:if="{{province}}">{{province}}{{city}}{{county}}</text><text wx:else>{{form.address}}</text>></view>
 </view>
 <view class='personView'>
   <view class='personLeft'><text>详细地址</text></view>
