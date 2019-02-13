@@ -6,47 +6,47 @@
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>全部订单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.allCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>未预约订单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.notAppointmentCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>已预约订单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.appointmentCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>已开工订单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.workStartedCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>已完工订单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.workFinishedCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>未审核退单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.chargebackCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>已审核退单</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.checkedCount}}</view>
 </view>
 <view class='orderBody'>
   <image src='../../images/order/dingdan_quanbu@2x.png'></image>
   <view class='orderName'>日程安排</view>
   <view class='orderName2'>></view>
-  <view class='orderName3'>12</view>
+  <view class='orderName3'>{{numData.allCount}}</view>
 </view>

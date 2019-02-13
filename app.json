@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/mine/mine",
     "pages/mine/person/person",
     "pages/mine/certification/certification",
-    "pages/index/index",
     "pages/mine/person/phone/phone",
     "pages/orderAll/orderDetail/orderDetail",
     "pages/orderAll/orderAll",

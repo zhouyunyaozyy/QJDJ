@@ -1,11 +1,12 @@
 // pages/orderAll/orderList/orderList.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tableData: []
   },
 
   /**
@@ -14,6 +15,11 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: "全部订单"//页面标题为路由参数
+    })
+    app.post("/mp-order/list/" + -1, {}, (res) => {
+      this.setData({
+        tableData: res.records
+      })
     })
   },
 

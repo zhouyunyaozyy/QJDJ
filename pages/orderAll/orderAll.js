@@ -1,11 +1,21 @@
 // pages/orderAll/orderAll.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    numData: {
+      allCount: 0,
+      appointmentCount: 0,
+      appointmentFlag: 0,
+      chargebackCount: 0,
+      checkedCount: 0,
+      notAppointmentCount: 0,
+      workFinishedCount: 0,
+      workStartedCount: 0
+    }
   },
 
   /**
@@ -26,7 +36,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.get("/mp-order/count", {}, (res) => {
+      console.log(res)
+      this.setData({
+        numData: res
+      })
+    })
   },
 
   /**

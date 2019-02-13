@@ -2,19 +2,19 @@
 <view class='orderHeder'>
   <input placeholder="客户名/地址/订单编号/手机号搜索" />
 </view>
-<view class='homeBody' bindtap='goOrderDetail' id='123'>
-  <view class='homeBody_header'>某产品安装<view>订单编号：12345612</view></view>
+<view class='homeBody' bindtap='goOrderDetail' id='123' wx:for="{{tableData}}" wx:key="item.orderId">
+  <view class='homeBody_header'>{{item.productName}}安装<view>{{item.orderNumber}}</view></view>
   <view class='homeBody_info'>
     <view class='halfView'>
-      <view>客户名称：<view>张三</view></view>
-      <view>产品平方量：<view>23平方</view></view>
+      <view>客户名称：<view>{{item.clientName}}</view></view>
+      <view>产品平方量：<view>{{item.productSize}}平方</view></view>
     </view>
     <view class='halfView'>
-      <view>电话：<view>13512331234</view></view>
-      <view>佣金：<view>234元</view></view>
+      <view>电话：<view>{{item.clientPhone}}</view></view>
+      <view>佣金：<view>{{item.totalPrice}}元</view></view>
     </view>
-    <view class='normalView'>地址：<view class='addressView'>按时大撒大撒抽空把就擦多久啊是简单快乐</view></view>
-    <view class='normalView lastView'>接单截止时间：<view>218-12-20 21：00</view></view>
+    <view class='normalView'>地址：<view class='addressView'>{{item.address}}</view></view>
+    <view class='normalView lastView'>{{item.orderTimeText}}：<view>{{item.orderTime}}</view></view>
   </view>
 </view>
   
