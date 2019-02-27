@@ -72,8 +72,9 @@ Page({
 
   },
   goOrderDetail: function (event) {
+    console.log(event)
     wx.navigateTo({
-      url: "/pages/orderAll/orderDetail/orderDetail?id=" + event.target.id
+      url: "/pages/orderAll/orderDetail/orderDetail?id=" + event.currentTarget.id
     })
   }
 })

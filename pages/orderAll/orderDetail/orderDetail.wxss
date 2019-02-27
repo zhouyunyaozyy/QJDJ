@@ -50,6 +50,21 @@
 .lastView {
   padding-top: 20rpx;
   border-top: 1px solid #eeeeee;
+  font-size: 26rpx;
+}
+.orderStatusIcon {
+  line-height: 26rpx;
+  float: right;
+}
+.orderStatusIcon>text{
+  line-height: 26rpx;
+  margin-left: 10rpx;
+}
+.orderStatusIcon>image{
+  height: 26rpx;
+  width: 26rpx;
+  position: relative;
+  top: 4rpx;
 }
 
 .info {
@@ -95,4 +110,27 @@
 .payBtn{
   background-color: #ea4752;
   color: white;
+}
+.payBtnUpdate {
+  margin: 20rpx;
+  background-color: #ea4752;
+  color: white;
+}
+.beforeMeet {
+  width: 50%;
+  display: inline-block;
+  color: white;
+  background-color: #ea4752;
+  border-radius: 0;
+}
+.refuseMeet {
+  background-color: white;
+  color: #ea4752;
+  border-radius: 0;
+  width: 50%;
+  display: inline-block;
+}
+
+.tui-picker-detail {
+  margin: 20rpx;
 }

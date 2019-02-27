@@ -1,12 +1,12 @@
 <view class='homeBody' bindtap='goOrderDetail' id='123'>
-  <view class='homeBody_header'>某产品安装<view>订单编号：12345612</view></view>
+  <view class='homeBody_header'>{{numData.productName}}<view>{{numData.orderNumber}}</view></view>
   <view class='homeBody_info'>
     <view class='halfView'>
-      <view>客户名称：<view>张三</view></view>
-      <view>产品平方量：<view>23平方</view></view>
+      <view>客户名称：<view>{{numData.clientName}}</view></view>
+      <view>产品平方量：<view>{{numData.productSize}}平方</view></view>
     </view>
-    <view class='normalView'>地址：<view class='addressView'>按时大撒大撒抽空把就擦多久啊是简单快乐</view></view>
-    <view class='normalView lastView'>接单截止时间：<view>218-12-20 21：00</view></view>
+    <view class='normalView'>地址：<view class='addressView'>{{numData.address}}</view></view>
+    <view class='normalView lastView'>{{numData.orderTimeText}}：<view>{{numData.orderTime}}</view><view class='orderStatusIcon'><image src='../../../images/icon/weijiedan@2x.png' wx:if="numData.stateFlag == 1"></image><text>{{numData.stateFlagVal}}</text></view></view>
   </view>
 </view>
 <view class='info'>
@@ -14,21 +14,33 @@
     <view class='info_icon'></view>
     <view>商品信息</view>
   </view>
-  <view class='info_body'>某商品平方量：<view class='info_content'>234平方</view></view>
-  <view class='info_body'>全部商品信息：<view class='info_content'>阿瑟东飒飒的</view></view>
+  <view class='info_body'>某商品平方量：<view class='info_content'>{{numData.productSize}}平方</view></view>
+  <view class='info_body'>全部商品信息：<view class='info_content'>{{numData.productInfo}}</view></view>
 </view>
 <view class='info'>
   <view class='info_header'>
     <view class='info_icon'></view>
     <view>客户信息</view>
   </view>
-  <view class='info_body'>姓名：<view class='info_content'>张三</view></view>
-  <view class='info_body'>电话：<view class='info_content'>18872810012</view></view>
-  <view class='info_body'>地址：<view class='info_content'>18872810012</view></view>
-  <view class='info_body'>备注：<view class='info_content'>18872810012</view></view>
+  <view class='info_body'>姓名：<view class='info_content'>{{numData.clientName}}</view></view>
+  <view class='info_body'>电话：<view class='info_content'>{{numData.clientPhone}}</view></view>
+  <view class='info_body'>地址：<view class='info_content'>{{numData.address}}</view></view>
+  <view class='info_body'>备注：<view class='info_content'>{{numData.remark}}</view></view>
 </view>
 <view class='info_foot'>
   <view>说明：</view>
   <view>以上搜游费用指包括某产品每平方米安装费用及佣金，其他 辅料或额外安装费用，需师傅与客户自行协商</view>
 </view>
-<button class='payBtn' bindtap='receiveOrder'>立即接单并支付押金</button>
+
+<picker wx:if="{{numData.stateFlag === 2}}" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+  <view class="tui-picker-detail">
+    选择预约时间: {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+  </view>
+</picker>
+
+<button class='payBtn' bindtap='receiveOrder' wx:if="{{numData.stateFlag == 1}}">立即接单并支付押金</button>
+<button wx:if="{{numData.stateFlag === 2}}" class='beforeMeet' bindtap='meet'>预约</button>
+<button wx:if="{{numData.stateFlag === 3}}" class='beforeMeet' bindtap='kaigong'>开工</button>
+<button wx:if="{{numData.stateFlag === 2 || numData.stateFlag === 3}}" class='refuseMeet' bindtap='meet'>退单</button>
+<button class='payBtnUpdate' bindtap='updateBook' wx:if="{{numData.stateFlag === 4}}" disabled='{{imgBool}}'>上传安装确认书</button>
+<button class='payBtn' bindtap='commitAll' wx:if="{{numData.stateFlag === 4}}" disabled='{{!imgBool}}'>提交完工</button>

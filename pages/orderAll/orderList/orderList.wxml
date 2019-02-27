@@ -2,7 +2,7 @@
 <view class='orderHeder'>
   <input placeholder="客户名/地址/订单编号/手机号搜索" />
 </view>
-<view class='homeBody' bindtap='goOrderDetail' id='123' wx:for="{{tableData}}" wx:key="item.orderId">
+<view class='homeBody' bindtap='goOrderDetail' id='{{item.orderId}}' wx:for="{{tableData}}" wx:key="item.orderId">
   <view class='homeBody_header'>{{item.productName}}安装<view>{{item.orderNumber}}</view></view>
   <view class='homeBody_info'>
     <view class='halfView'>
