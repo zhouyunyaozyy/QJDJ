@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/orderAll/orderList/orderList",
     "pages/index/index",
+    "pages/orderAll/orderList/orderList",
     "pages/mine/mine",
     "pages/mine/person/person",
     "pages/mine/certification/certification",

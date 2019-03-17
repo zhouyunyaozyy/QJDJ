@@ -1,11 +1,12 @@
 // pages/home/home.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tableData: []
   },
 
   /**
@@ -25,8 +26,18 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+  goOrderDetail: function (event) {
+    console.log(event)
+    wx.navigateTo({
+      url: "/pages/orderAll/orderDetail/orderDetail?id=" + event.currentTarget.id
+    })
+  },
   onShow: function () {
-
+    app.post("/mp-order/list/" + 1, {}, (res) => {
+      this.setData({
+        tableData: res.records
+      })
+    })
   },
 
   /**

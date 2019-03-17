@@ -79,9 +79,9 @@ Page({
 
   },
   goOrderList: function (event) {
-    console.log(1, event.target.id)
+    // console.log(1, event, event.currentTarget.id)
     wx.navigateTo({
-      url: "/pages/orderAll/orderList/orderList?type=" + event.target.id
+      url: "/pages/orderAll/orderList/orderList?type=" + event.currentTarget.id
     })
   }
 })

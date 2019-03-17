@@ -127,20 +127,51 @@ Page({
       success: (res) => {
         if (res.confirm) {
           console.log('用户点击确定')
-          app.post("/mp-order/take/" + this.data.id, {}, (data) => {
-            console.log(data)
-            wx.showToast({
-              title: data,
-              icon: "successful",
-              duration: 2000
+          if (this.data.numData.payFlag == 1) { //需要费用
+            app.post("/mp-order/pay/" + this.data.id, {}, (data) => {
+              wx.requestPayment(
+                {
+                  'timeStamp': data.timeStamp,
+                  'nonceStr': data.nonceStr,
+                  'package': data.package,
+                  'signType': data.signType,
+                  'paySign': data.paySign,
+                  'success': (res) => {
+                    app.post("/mp-order/pay-success", { orderId: this.data.id, outTradeNo: data.outTradeNo }, (data2) => {
+                      wx.showToast({
+                        title: data2,
+                        icon: "successful",
+                        duration: 2000
+                      })
+                      setTimeout(() => {
+                        wx.navigateBack({
+                          delta: 1
+                        })
+                      }, 1000)
+                    })
+                   },
+                  'fail': function (res) { },
+                  'complete': function (res) { }
+                })
+
+              
             })
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
+          } else {
+            app.post("/mp-order/take/" + this.data.id, {}, (data) => {
+              console.log(data)
+              wx.showToast({
+                title: data,
+                icon: "successful",
+                duration: 2000
               })
-            }, 1000)
-            
-          })
+              setTimeout(() => {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }, 1000)
+              
+            })
+          }
         } else if (res.cancel) {
           console.log('用户点击取消')
         }

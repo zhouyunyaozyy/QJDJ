@@ -82,3 +82,8 @@
   padding-top: 20rpx;
   border-top: 1px solid #eeeeee;
 }
+text{
+  text-align: center;
+  display: block;
+  color: #f75d45;
+}
