@@ -1,6 +1,6 @@
 <!--pages/orderAll/orderAll.wxml-->
 <view class='orderBody'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_xinxi@2x.png'></image>
   <view class='orderName' bindtap='goPerson'>个人信息</view>
   <view class='orderName2' bindtap='goPerson'>></view>
 </view>
@@ -10,32 +10,32 @@
   <view class='orderName2'>></view>
 </view> -->
 <view class='orderBody' bindtap='showPickerProduct'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_anzhuang@2x.png'></image>
   <view class='orderName'>安装类型</view>
   <view class='orderName2'>></view>
 </view>
 <view class='orderBody' bindtap='showPickerArea'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_quyu@2x.png'></image>
   <view class='orderName'>可安装区域</view>
   <view class='orderName2'>></view>
 </view>
 <view class='orderBody' bindtap='goShiming'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_renzheng@2x.png'></image>
   <view class='orderName'>实名认证</view>
   <view class='orderName2'>></view>
 </view>
 <view class='orderBody'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_women@2x.png'></image>
   <view class='orderName'>关于我们</view>
   <view class='orderName2'>></view>
 </view>
 <view class='orderBody'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_shezhi@2x.png'></image>
   <view class='orderName'>系统设置</view>
   <view class='orderName2'>></view>
 </view>
 <view class='orderBody'>
-  <image src='../../images/order/dingdan_quanbu@2x.png'></image>
+  <image src='../../images/person/wo_fankui@2x.png'></image>
   <view class='orderName'>意见反馈</view>
   <view class='orderName2'>></view>
 </view>

@@ -13,9 +13,9 @@
   border-bottom: 1px solid #f4f4f4;
 }
 .orderBody>image{
-  width: 32rpx;
+  width: 46rpx;
   height: 46rpx;
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
   margin-left: 44rpx;
 }
